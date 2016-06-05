@@ -381,7 +381,7 @@ class Controle_Estoque_Admin {
 		global $wpdb;
 		global $post;
 
-		// If this isn't a 'book' post, don't update it.
+		// If this isn't a 'pedido' post, don't update it.
 		if ( 'pedido' != $post->post_type ) {
 		    return;
 		}
