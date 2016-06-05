@@ -379,6 +379,12 @@ class Controle_Estoque_Admin {
 	 */
 	public function save_title( $post_id ) {
 		global $wpdb;
+		global $post;
+
+		// If this isn't a 'book' post, don't update it.
+		if ( 'pedido' != $post->post_type ) {
+		    return;
+		}
 
 		$wpdb->update( $wpdb->posts, array( 'post_title' => "Pedido #{$post_id}" ), array( 'ID' => $post_id ) );
 	}
